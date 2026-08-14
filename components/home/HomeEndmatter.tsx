@@ -71,7 +71,7 @@ export function HomeEndmatter() {
             Join LongCat
           </h2>
           <p className="mt-6 text-lg font-medium leading-7 tracking-[-0.02em] text-foreground">
-            Researcher, LLM Self-Evolution and Automated Research Agents
+            Researcher, LLM Self-Improvement and Automated Research Agents
           </p>
           <p className="mt-3 text-sm leading-6 text-muted sm:text-base">
             Campus hiring in Beijing and Shanghai.
