@@ -87,7 +87,7 @@ export function WorkloadFindings() {
     <div className="mt-8 sm:mt-10">
       <ol
         className="grid border-t border-border md:grid-cols-3 md:divide-x md:divide-border"
-        aria-label="Figure 5 conclusions"
+        aria-label="Task-category process conclusions"
       >
         {WORKLOAD_FINDINGS.map((finding, index) => (
           <li
@@ -111,7 +111,7 @@ export function DiagnosticFindings() {
     <div className="mt-8 sm:mt-10">
       <ol
         className="divide-y divide-border border-t border-border"
-        aria-label="Figure 6 conclusions"
+        aria-label="Behavioral diagnostics conclusions"
       >
         {DIAGNOSTIC_FINDINGS.map((finding, index) => (
           <li

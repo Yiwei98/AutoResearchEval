@@ -19,7 +19,6 @@ export function WorkloadBottleneckChart() {
       title="Process dimensions by task category"
       subtitle="Process dimensions by task category, averaged over the seven models."
       summary="Puzzle and Challenge has the strongest scores across all three dimensions. CUDA has the lowest solution framing and execution scores, while Model Development has the lowest feedback control score."
-      source={WORKLOAD_BOTTLENECKS.source}
     >
       <ul className="mb-4 flex flex-wrap gap-x-4 gap-y-2" aria-label="Process dimension legend">
         {PROCESS_DIMENSION_META.map((dimension) => (
@@ -89,7 +88,7 @@ export function WorkloadBottleneckChart() {
       </div>
 
       <table className="sr-only">
-        <caption>Figure 5 process dimension values by task category</caption>
+        <caption>Process dimension values by task category</caption>
         <thead>
           <tr>
             <th scope="col">Workload</th>

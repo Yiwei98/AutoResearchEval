@@ -14,7 +14,7 @@ const PAPER_SECTIONS = [
 export function PaperToc() {
   return (
     <FloatingToc
-      pathname="/"
+      pathname="/blog"
       label="Navigate the paper"
       sections={PAPER_SECTIONS}
       progress

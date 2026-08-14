@@ -2,7 +2,6 @@
 
 import { useRef, useState, type KeyboardEvent } from "react";
 import { MODELS, IN_TASK, INTER_TASK } from "@/lib/benchmark-data";
-import { FIGURE7_IN_TASK, FIGURE8_INTER_TASK } from "@/lib/paper-data";
 import { ModelIcon } from "./ModelIcon";
 
 export type SelfImprovementMode = "in" | "inter";
@@ -20,7 +19,6 @@ export function SelfImprovementChart({
   const mode = showTabs ? selectedMode : initialMode;
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const data = mode === "in" ? IN_TASK : INTER_TASK;
-  const provenance = mode === "in" ? FIGURE7_IN_TASK : FIGURE8_INTER_TASK;
   const titleId = `self-improvement-title-${showTabs ? "switcher" : mode}`;
   const descriptionId = `self-improvement-description-${showTabs ? "switcher" : mode}`;
   const panelId = `self-improvement-panel-${showTabs ? "switcher" : mode}`;
@@ -105,9 +103,7 @@ export function SelfImprovementChart({
           >
             Inter-task
           </button>
-        </div> : <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-accent">
-          {provenance.source.label}
-        </span>}
+        </div> : null}
       </div>
 
       <div
@@ -195,7 +191,7 @@ export function SelfImprovementChart({
 
       <table className="sr-only">
         <caption>
-          Figure {mode === "in" ? "7 intra-task" : "8 inter-task"} experience-reuse data
+          {mode === "in" ? "Intra-task" : "Inter-task"} experience-reuse data
         </caption>
         <thead>
           <tr>

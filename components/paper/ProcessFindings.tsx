@@ -8,7 +8,7 @@ const DIMENSION_COLOR = {
 export function ProcessFindings() {
   return (
     <div className="mt-8 sm:mt-10">
-      <ol className="border-t border-border" aria-label="Figure 4 conclusions">
+      <ol className="border-t border-border" aria-label="Model process conclusions">
         <li className="grid gap-5 border-b border-border py-8 last:border-b-0 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-12 sm:py-10">
           <div>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-accent">

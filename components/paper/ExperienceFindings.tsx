@@ -13,7 +13,7 @@ export function InTaskFindings() {
 
   return (
     <div className="mt-8 sm:mt-10">
-      <ol className="border-t border-border" aria-label="Figure 7 conclusions">
+      <ol className="border-t border-border" aria-label="Intra-task experience conclusions">
         <li className="grid gap-5 border-b border-border py-8 last:border-b-0 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-12 sm:py-10">
           <FindingHeading
             label="01 / General effect"
@@ -58,7 +58,7 @@ export function InterTaskFindings() {
 
   return (
     <div className="mt-8 sm:mt-10">
-      <ol className="border-t border-border" aria-label="Figure 8 conclusions">
+      <ol className="border-t border-border" aria-label="Inter-task experience conclusions">
         <li className="grid gap-5 border-b border-border py-8 last:border-b-0 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-12 sm:py-10">
           <FindingHeading
             label="01 / Ranking shifts"
@@ -108,7 +108,7 @@ export function ExperienceReuseFindings() {
 
   return (
     <div className="mt-8 sm:mt-10">
-      <ol className="border-t border-border" aria-label="Figure 9 conclusions">
+      <ol className="border-t border-border" aria-label="Experience-reuse conclusions">
         <li className="grid gap-5 border-b border-border py-8 last:border-b-0 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-12 sm:py-10">
           <FindingHeading
             label="01 / Representation"

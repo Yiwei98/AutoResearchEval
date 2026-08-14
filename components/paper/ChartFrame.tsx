@@ -1,27 +1,21 @@
 import type { ReactNode } from "react";
 
-import type { PaperSource } from "@/lib/paper-data";
-
 export function ChartFrame({
   id,
   title,
   subtitle,
   summary,
-  source,
   children,
   className = "",
   plain = false,
-  showSourceLabel = true,
 }: {
   id: string;
   title: string;
   subtitle?: string;
   summary: string;
-  source: PaperSource;
   children: ReactNode;
   className?: string;
   plain?: boolean;
-  showSourceLabel?: boolean;
 }) {
   return (
     <figure
@@ -44,11 +38,6 @@ export function ChartFrame({
             </p>
           ) : null}
         </div>
-        {showSourceLabel ? (
-          <span className="shrink-0 rounded-full bg-accent-soft px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
-            {source.label}
-          </span>
-        ) : null}
       </header>
 
       <p id={`${id}-summary`} className="sr-only">

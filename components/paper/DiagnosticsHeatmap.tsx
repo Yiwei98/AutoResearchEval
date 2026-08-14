@@ -55,7 +55,6 @@ export function DiagnosticsHeatmap() {
       title="Behavioral diagnostics across models"
       subtitle={`${BEHAVIORAL_DIAGNOSTICS.sample}. These diagnostics are not a second ranking: shading compares models only within each column, and a larger value is not uniformly preferable. Evaluated commit rounds indicate observation support rather than an additional capability measure.`}
       summary="The table reports ten trajectory diagnostics. Shading only compares values within a column and does not indicate overall capability. Every cell also prints its exact value."
-      source={BEHAVIORAL_DIAGNOSTICS.source}
     >
       <div
         className="overflow-x-auto rounded-xl border border-border focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"

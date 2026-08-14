@@ -4,7 +4,6 @@ import {
   PROCESS_DIMENSIONS,
   type ProcessScores,
 } from "@/lib/benchmark-data";
-import { FIGURE4_PROCESS } from "@/lib/paper-data";
 
 import { ModelIcon } from "./ModelIcon";
 import { ChartFrame } from "./paper/ChartFrame";
@@ -32,7 +31,6 @@ export function ProcessChart() {
       title="Process dimensions across seven models"
       subtitle="Outcome, Solution Framing, Execution, and Feedback Control across seven models. Process scores use task-macro aggregation and lie in [0, 1], where higher is better."
       summary="Claude leads Outcome, Solution Framing, and Execution. GPT and Gemini reach similar outcomes through different balances of Execution and Feedback Control, while LongCat shows that high Feedback Control alone cannot compensate for weak Solution Framing."
-      source={FIGURE4_PROCESS.source}
     >
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {PROCESS_DIMENSIONS.map((dimension) => (
@@ -68,13 +66,13 @@ export function ProcessChart() {
                 ))}
               </div>
 
-              <div className="relative z-10 flex h-full items-end justify-between gap-1">
+              <div className="relative z-10 grid h-full grid-cols-7 items-end gap-1">
                 {MODELS.map((model) => {
                   const value = PROCESS[model.key][dimension.key];
                   return (
                     <div
                       key={model.key}
-                      className="group relative flex flex-1 flex-col items-center justify-end rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                      className="group relative flex min-w-0 flex-col items-center justify-end rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                       role="img"
                       tabIndex={0}
                       title={`${dimension.label}, ${model.name}: ${value.toFixed(3)}`}
@@ -94,9 +92,9 @@ export function ProcessChart() {
               </div>
             </div>
 
-            <div className="mt-1.5 flex justify-between gap-1 pl-6" aria-hidden="true">
+            <div className="mt-1.5 grid grid-cols-7 gap-1 pl-6" aria-hidden="true">
               {MODELS.map((model) => (
-                <span key={model.key} className="flex flex-1 justify-center">
+                <span key={model.key} className="flex min-w-0 justify-center">
                   <ModelIcon model={model} size={16} />
                 </span>
               ))}
@@ -106,7 +104,7 @@ export function ProcessChart() {
       </div>
 
       <table className="sr-only">
-        <caption>Figure 4 outcome and process scores across seven models</caption>
+        <caption>Outcome and process scores across seven models</caption>
         <thead>
           <tr>
             <th scope="col">Model</th>

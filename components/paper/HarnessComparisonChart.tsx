@@ -34,7 +34,6 @@ export function HarnessComparisonChart() {
       title="Harness Comparison: Leading, Native, and Open-Source Harnesses"
       subtitle="Coding harness comparison across Claude Code, each model’s native harness, and OpenCode. Dark bars show avg@3 and light bars show best@3."
       summary="Model ranking is unchanged across harnesses. Native and OpenCode harnesses improve GPT and Kimi average performance more than best performance, indicating greater run-to-run stability."
-      source={HARNESS_COMPARISON.source}
     >
       <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] text-muted">
         <span className="flex items-center gap-1.5">
@@ -144,7 +143,7 @@ export function HarnessComparisonChart() {
       </ul>
 
       <table className="sr-only">
-        <caption>Figure 9 coding harness comparison values</caption>
+        <caption>Coding harness comparison values</caption>
         <thead>
           <tr>
             <th scope="col">Model</th>

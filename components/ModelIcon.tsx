@@ -37,6 +37,7 @@ export function ModelIcon({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
+        className="block shrink-0 object-contain"
         src={withBasePath(model.icon)}
         alt=""
         width={inner}

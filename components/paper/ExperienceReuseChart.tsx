@@ -28,7 +28,6 @@ export function ExperienceReuseChart() {
       title="Representation and source of inter-task experience"
       subtitle={EXPERIENCE_REUSE.sample}
       summary="Distilled lessons outperform raw workspaces for Claude, GPT, and GLM on both avg@3 and best@3. In the GLM and LongCat transfer study, each executing model performs better with its own lessons than with the other model's lessons."
-      source={EXPERIENCE_REUSE.source}
     >
       <section aria-labelledby="experience-representation-title">
         <div className="mb-3">

@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import "katex/dist/katex.min.css";
 import "./globals.css";
 import { SiteNav } from "@/components/SiteNav";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title:
     "Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI Research and Development",
   description:
-    "A systematic process- and experience-based evaluation of seven frontier models across 36 long-horizon AutoLab research tasks.",
+    "Follow how seven frontier agents frame, execute, revise, and reuse experience across 36 long-horizon research tasks.",
 };
 
 export default function RootLayout({
@@ -25,26 +26,28 @@ export default function RootLayout({
         <main id="main-content" tabIndex={-1} className="flex-1">
           {children}
         </main>
-        <footer className="border-t border-border py-8 text-center text-sm text-muted">
-          <p>
-            Data & metrics from{" "}
-            <span className="font-medium text-foreground">
-              &ldquo;Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI
-              Research and Development&rdquo;
-            </span>{" "}
-          </p>
-          <p className="mt-1">
-            Benchmark:{" "}
+        <footer className="border-t border-border/80 py-7 text-sm text-muted">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-center sm:flex-row sm:px-6 sm:text-left">
+            <div className="flex items-center gap-2.5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={withBasePath("/icons/longcat.svg")}
+                alt=""
+                width={24}
+                height={24}
+                className="rounded-md"
+              />
+              <span className="font-medium text-foreground">AutoResearch Eval</span>
+            </div>
             <a
               href="https://autolab.moe/"
               className="text-accent hover:underline"
               target="_blank"
               rel="noreferrer"
             >
-              AutoLab
+              7 models, 36 tasks, 756 trajectories on AutoLab
             </a>{" "}
-            · 7 models × 36 tasks × 3 rollouts
-          </p>
+          </div>
         </footer>
       </body>
     </html>

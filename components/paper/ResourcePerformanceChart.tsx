@@ -172,7 +172,7 @@ function formatMeasure(metricKey: ResourceMetricKey, measure: Figure3Measure) {
 function precisionLabel(measure: Figure3Measure) {
   return measure.precision === "exact"
     ? "exact value printed in Section 2.3"
-    : "approximate value digitized from Figure 3";
+    : "approximate value digitized from the published chart";
 }
 
 function ResourcePanel({ panel }: { panel: ResourcePanelConfig }) {
@@ -408,7 +408,6 @@ export function ResourcePerformanceChart() {
       title="Resource-performance trade-offs"
       subtitle={`${FIGURE3_RESOURCE_PERFORMANCE.metric}. ${FIGURE3_RESOURCE_PERFORMANCE.sample}.`}
       summary="Claude achieves the highest best@3 at the highest estimated cost. GPT approaches that performance at substantially lower cost and mean time. LongCat and DeepSeek are the lowest-cost models."
-      source={FIGURE3_RESOURCE_PERFORMANCE.source}
     >
       <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] leading-5 text-muted">
         <span className="flex items-center gap-1.5">
@@ -419,7 +418,7 @@ export function ResourcePerformanceChart() {
           <span className="relative h-3 w-3 rounded-full border-2 border-accent bg-surface" aria-hidden="true">
             <span className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent" />
           </span>
-          ≈ digitized from Figure 3
+          ≈ digitized from the published chart
         </span>
         <span className="flex items-center gap-1.5">
           <span className="w-6 border-t border-dashed border-muted" aria-hidden="true" />
@@ -463,8 +462,8 @@ export function ResourcePerformanceChart() {
 
       <table className="sr-only">
         <caption>
-          Figure 3 resource-performance values. Approximate resource values were digitized from
-          the published chart.
+          Resource-performance values. Approximate resource values were digitized from the
+          published chart.
         </caption>
         <thead>
           <tr>

@@ -38,6 +38,160 @@ body {
   overflow-x: clip;
 }
 
+/* Home uses one continuous editorial canvas. The trajectory carries the
+   hierarchy, so sections are separated by space instead of repeated frames. */
+.home-story {
+  background:
+    radial-gradient(circle at 76% 8%, rgb(35 122 61 / 5%), transparent 24rem),
+    radial-gradient(circle at 18% 68%, rgb(35 122 61 / 3.5%), transparent 28rem);
+}
+
+.home-hero {
+  min-height: clamp(36rem, 68vw, 49rem);
+}
+
+@media (min-width: 1024px) {
+  .home-hero {
+    min-height: clamp(36rem, calc(100dvh - 3.75rem), 49rem);
+  }
+}
+
+.home-title {
+  font-kerning: normal;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.home-scene {
+  isolation: isolate;
+}
+
+.home-scale-ledger dd {
+  text-wrap: nowrap;
+}
+
+.home-cta {
+  box-shadow: 0 8px 26px rgb(29 76 41 / 0%);
+}
+
+.home-cta:hover {
+  box-shadow: 0 12px 30px rgb(29 76 41 / 9%);
+}
+
+.home-trajectory-shell {
+  position: relative;
+}
+
+.home-trajectory-spine {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.home-trajectory-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: visible;
+}
+
+.home-trajectory-guide,
+.home-trajectory-active {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-trajectory-guide {
+  stroke: color-mix(in srgb, var(--accent) 26%, var(--border));
+  stroke-width: 1.05;
+  stroke-dasharray: 2 10;
+  opacity: 0.38;
+}
+
+.home-trajectory-active {
+  stroke: color-mix(in srgb, var(--accent) 76%, transparent);
+  stroke-width: 1.55;
+  opacity: 0.58;
+}
+
+.home-trajectory-node {
+  fill: var(--background);
+  stroke: color-mix(in srgb, var(--accent) 76%, var(--background));
+  stroke-width: 1.35;
+  vector-effect: non-scaling-stroke;
+}
+
+.home-trajectory-keyword {
+  position: relative;
+}
+
+.home-visual-surface {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--surface) 62%, transparent);
+  box-shadow: inset 0 0 0 1px rgb(26 26 26 / 6%);
+}
+
+.home-visual-lift {
+  filter: drop-shadow(0 24px 44px rgb(29 76 41 / 7%));
+}
+
+.home-conclusion {
+  position: relative;
+}
+
+.home-conclusion-line {
+  position: relative;
+  width: min(16rem, 44vw);
+  height: 1.25rem;
+  margin: 0 auto 1.75rem;
+}
+
+.home-conclusion-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.5px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, var(--accent) 42%, var(--accent) 58%, transparent);
+}
+
+.home-conclusion-line-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.72rem;
+  height: 0.72rem;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--background);
+  box-shadow: 0 0 0 0.38rem color-mix(in srgb, var(--accent-soft) 74%, transparent);
+}
+
+.home-conclusion::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5rem;
+  width: min(70vw, 46rem);
+  height: 16rem;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgb(35 122 61 / 10%), transparent 70%);
+  filter: blur(12px);
+}
+
 main [id] {
   scroll-margin-top: var(--header-offset);
 }
@@ -420,6 +574,33 @@ path.trajectory-chart-hit:focus-visible {
 
   .site-nav-disabled {
     font-size: 0.7rem;
+  }
+
+  .home-trajectory-guide {
+    opacity: 0.28;
+  }
+
+  .home-trajectory-active {
+    stroke-width: 1.35;
+    opacity: 0.48;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-trajectory-active {
+    opacity: 0.28;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > div {
+    gap: 0.5rem;
+    padding-inline: 0.75rem;
+  }
+
+  .site-nav-link {
+    padding-inline: 0.4rem;
+    font-size: 0.78rem;
   }
 }
 

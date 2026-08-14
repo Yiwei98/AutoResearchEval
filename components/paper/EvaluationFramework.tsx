@@ -44,9 +44,7 @@ export function ProcessEvaluationFramework() {
       title="Three measurements of one research loop"
       subtitle=""
       summary="Solution Framing, Execution, and Feedback Control describe behavior inside a research run."
-      source={EVALUATION_FRAMEWORK.source}
       plain
-      showSourceLabel={false}
     >
       <section
         className=""
@@ -95,9 +93,7 @@ export function ExperienceEvaluationFramework() {
       title="Experience within and across tasks"
       subtitle=""
       summary="Intra-task and inter-task comparisons isolate whether accumulated experience improves later decisions."
-      source={EVALUATION_FRAMEWORK.source}
       plain
-      showSourceLabel={false}
     >
       <section
         className="w-full"

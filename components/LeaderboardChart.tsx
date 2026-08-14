@@ -45,9 +45,6 @@ export function LeaderboardChart({ category }: { category: CategoryKey }) {
           <span className="inline-block h-3 w-3 rounded-sm bg-accent/30" />
           best@3 gain
         </span>
-        <span className="ml-auto rounded-full bg-accent-soft px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
-          Figure 2
-        </span>
       </div>
 
       <div className="relative pl-9" style={{ height: CHART_H }}>
@@ -68,7 +65,7 @@ export function LeaderboardChart({ category }: { category: CategoryKey }) {
         </div>
 
         {/* Bars */}
-        <div className="relative z-10 flex h-full w-full items-end justify-between gap-2">
+        <div className="relative z-10 grid h-full w-full grid-cols-7 items-end gap-2">
           {ranked.map(({ m, s }) => {
             const dim = hover && hover !== m.key;
             const hBest = px(s.best3);
@@ -76,7 +73,7 @@ export function LeaderboardChart({ category }: { category: CategoryKey }) {
             return (
               <div
                 key={m.key}
-                className="group flex h-full flex-1 flex-col items-center justify-end rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="group flex h-full min-w-0 flex-col items-center justify-end rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 role="img"
                 tabIndex={0}
                 title={`${m.name}: avg@3 ${s.avg3.toFixed(3)}, best@3 ${s.best3.toFixed(3)}`}
@@ -119,11 +116,11 @@ export function LeaderboardChart({ category }: { category: CategoryKey }) {
       </div>
 
       {/* X axis labels */}
-      <div className="mt-2 flex justify-between gap-2 pl-9">
+      <div className="mt-2 grid grid-cols-7 gap-2 pl-9">
         {ranked.map(({ m }) => (
           <div
             key={m.key}
-            className="flex flex-1 flex-col items-center gap-1"
+            className="flex min-w-0 flex-col items-center gap-1"
             onMouseEnter={() => setHover(m.key)}
             onMouseLeave={() => setHover(null)}
           >

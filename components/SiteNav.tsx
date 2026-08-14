@@ -7,10 +7,14 @@ import { SITE_RESOURCES } from "@/lib/site-config";
 
 export function SiteNav() {
   const pathname = usePathname();
+  const homeIsActive = pathname === "/";
+  const blogIsActive = pathname === "/blog" || pathname.startsWith("/blog/");
+  const trajectoriesIsActive = pathname.startsWith("/trajectories");
+
   return (
     <header className="site-header sticky top-0 z-40 border-b border-border bg-surface/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
-        <Link href="/" className="site-brand flex items-center gap-2.5" aria-label="AutoResearch Evaluation home">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-6 py-3.5">
+        <Link href="/" className="site-brand flex shrink-0 items-center gap-2.5" aria-label="AutoResearch Evaluation home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={withBasePath("/icons/longcat.svg")}
@@ -23,12 +27,23 @@ export function SiteNav() {
             AutoResearch Eval
           </span>
         </Link>
-        <nav className="flex items-center gap-1" aria-label="Primary navigation">
+        <nav className="flex shrink-0 items-center gap-0.5 sm:gap-1" aria-label="Primary navigation">
           <Link
             href="/"
-            aria-current={pathname === "/" ? "page" : undefined}
+            aria-current={homeIsActive ? "page" : undefined}
             className={`site-nav-link ${
-              pathname === "/"
+              homeIsActive
+                ? "bg-accent-soft text-accent"
+                : "text-muted hover:text-foreground"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/blog"
+            aria-current={blogIsActive ? "page" : undefined}
+            className={`site-nav-link ${
+              blogIsActive
                 ? "bg-accent-soft text-accent"
                 : "text-muted hover:text-foreground"
             }`}
@@ -46,9 +61,9 @@ export function SiteNav() {
           </a>
           <Link
             href="/trajectories"
-            aria-current={pathname.startsWith("/trajectories") ? "page" : undefined}
+            aria-current={trajectoriesIsActive ? "page" : undefined}
             className={`site-nav-link ${
-              pathname.startsWith("/trajectories")
+              trajectoriesIsActive
                 ? "bg-accent-soft text-accent"
                 : "text-muted hover:text-foreground"
             }`}

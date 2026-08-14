@@ -39,7 +39,6 @@ export function AutoHarnessTransferChart() {
       title="Auto Harness"
       subtitle="Gain of the evolved harness over the original harness on seed tasks, held-out System Optimization tasks, cross-model System Optimization tasks, and unrelated task families."
       summary="The evolved harness improves its seed tasks, held-out LongCat System Optimization tasks, and GPT-5.5 System Optimization tasks. On unrelated task families, avg@3 falls slightly while best@3 rises slightly."
-      source={AUTO_HARNESS_TRANSFER.source}
     >
       <div
         className="min-w-0 max-w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
@@ -215,7 +214,7 @@ export function AutoHarnessTransferChart() {
       </div>
 
       <table className="sr-only">
-        <caption>Figure 10 evolved harness gains by transfer setting</caption>
+        <caption>Evolved harness gains by transfer setting</caption>
         <thead>
           <tr>
             <th scope="col">Setting</th>

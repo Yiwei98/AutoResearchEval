@@ -9,7 +9,7 @@
 
 export const PAPER_REVISION = {
   date: "2026-08-13",
-  sha256: "7c7a4bb323a9f6e536f905d5235fa9708baf684c3ce595b6d7644f14bc789502",
+  sha256: "3a1185437685772aa03176c74b0ac369afa116a61b1d4c3019671ab869309ede",
 } as const;
 
 export const PAPER_SCALE = {

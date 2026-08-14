@@ -234,7 +234,7 @@ export function PaperStory() {
               <HeroStat
                 index="03"
                 value={String(PAPER_SCALE.baselineTrajectories)}
-                label="common-harness rollouts"
+                label="rollouts"
               />
               <HeroStat
                 index="04"
@@ -291,7 +291,7 @@ export function PaperStory() {
         tone="soft"
       >
         <LeaderboardSection />
-        <PaperConclusions label="Figure 2 conclusions" conclusions={OUTCOME_CONCLUSIONS} />
+        <PaperConclusions label="Outcome conclusions" conclusions={OUTCOME_CONCLUSIONS} />
       </PaperSection>
 
       <PaperSection
@@ -309,7 +309,7 @@ export function PaperStory() {
         >
           <ProcessChart />
           <PaperConclusions
-            label="Figure 4 conclusions"
+            label="Model process conclusions"
             conclusions={MODEL_PROCESS_CONCLUSIONS}
           />
 
@@ -319,7 +319,7 @@ export function PaperStory() {
           >
             <WorkloadBottleneckChart />
             <PaperConclusions
-              label="Figure 5 conclusion"
+              label="Task-category process conclusion"
               conclusions={WORKLOAD_PROCESS_CONCLUSIONS}
             />
           </div>
@@ -342,7 +342,7 @@ export function PaperStory() {
             <SelfImprovementChart mode="in" showTabs={false} />
           </div>
           <PaperConclusions
-            label="Figure 7 conclusions"
+            label="Intra-task experience conclusions"
             conclusions={INTRA_TASK_CONCLUSIONS}
           />
         </StorySubsection>
@@ -355,7 +355,7 @@ export function PaperStory() {
             <SelfImprovementChart mode="inter" showTabs={false} />
           </div>
           <PaperConclusions
-            label="Figure 8 conclusions"
+            label="Inter-task experience conclusions"
             conclusions={INTER_TASK_CONCLUSIONS}
           />
         </StorySubsection>
@@ -372,7 +372,7 @@ export function PaperStory() {
           <HarnessComparisonChart />
           <AutoHarnessTransferChart />
         </div>
-        <PaperConclusions label="Figure 9 conclusion" conclusions={HARNESS_CONCLUSIONS} />
+        <PaperConclusions label="Harness conclusion" conclusions={HARNESS_CONCLUSIONS} />
       </PaperSection>
 
       <PaperSection
@@ -382,7 +382,7 @@ export function PaperStory() {
         intro="High reward does not reveal whether an agent discovered a new idea or assembled established techniques. We classify 252 best-seed solutions to examine what current auto research agents actually produce."
       >
         <SolutionNatureChart />
-        <PaperConclusions label="Figure 11 conclusions" conclusions={SOLUTION_CONCLUSIONS} />
+        <PaperConclusions label="Solution-nature conclusions" conclusions={SOLUTION_CONCLUSIONS} />
       </PaperSection>
 
       <PaperSection

@@ -57,14 +57,13 @@ export function SolutionNatureChart() {
       title="Solution Nature and Novelty"
       subtitle="Solution nature across 252 best-seed solutions. Each model contributes 36 solutions; three novel approaches remain after manual review."
       summary={`${compositionStacking} of ${totalSolutions} solutions use composition-stacking. ${evaluationHacking} use evaluation-specific shortcuts and ${novelApproaches} qualify as validated novel approaches.`}
-      source={SOLUTION_NATURE.source}
     >
       <div className="mb-6 grid border-y border-border py-4 sm:grid-cols-3">
         <EvidenceStat
           value={compositionStacking}
           total={totalSolutions}
           label="Composition-stacking"
-          note="The largest Figure 11 category for every model"
+          note="The largest solution category for every model"
           tone="composition"
         />
         <EvidenceStat
@@ -167,7 +166,7 @@ export function SolutionNatureChart() {
 
       <table className="sr-only">
         <caption>
-          Exact Figure 11 solution-nature counts. Each model contributes 36 solutions and the
+          Exact solution-nature counts. Each model contributes 36 solutions and the
           full sample contains {totalSolutions} solutions.
         </caption>
         <thead>
